@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brookies | Carrito</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/carrito.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="nav__inner">
+      <div class="brand">
+        <a href="index.html">
+          <img src="img/logo blanco.png" style="width: 200px;" alt="brookies">
+        </a>
+      </div>
+
+      <nav class="menu" aria-label="Menú principal">
+        <a href="tienda.html">Menú</a>
+        <a href="promo.html">Promoción</a>
+        <a href="login.html">Log in</a>
+        <a href="sobre-nosotros.html">Sobre Nosotros</a>
+      </nav>
+
+      <div class="cart" title="Carrito">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 6h15l-1.5 9h-12z"></path>
+          <path d="M6 6l-2-3H1"></path>
+          <circle cx="9" cy="20" r="1.5"></circle>
+          <circle cx="18" cy="20" r="1.5"></circle>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__banner">
+        <div class="hero__logoText">
+          <img src="img/banner brookies 2.jpg" alt="Banner Brookies">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- TITLE -->
+  <div class="titleBar">Tu carrito</div>
+
+  <!-- CART -->
+  <section class="cartSection">
+    <div class="wrap">
+
+      <div class="cartList">
+
+        <div class="item" data-price="35">
+          <img class="thumb" src="img/foto choco chip.jpg" alt="Galleta Chocochip">
+          <div class="info">
+            <div class="name">Galleta Chocochip</div>
+            <p class="price">Precio: L. 35</p>
+            <select class="qty">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="item" data-price="35">
+          <img class="thumb" src="img/fotos de red velvet.jpg" alt="Galleta Redvelvet">
+          <div class="info">
+            <div class="name">Galleta Redvelvet</div>
+            <p class="price">Precio: L. 35</p>
+            <select class="qty">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="item" data-price="40">
+          <img class="thumb" src="img/IMG_0209.JPG" alt="Galleta rellena de avellana">
+          <div class="info">
+            <div class="name">Galleta rellena de avellana</div>
+            <p class="price">Precio: L. 40</p>
+            <select class="qty">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="summary">
+        <div>Total:</div>
+        <div id="totalText">L.0</div>
+      </div>
+
+     <div class="payWrap">
+  <a href="tienda.html" class="payBtn">Ir a la tienda</a>
+</div>
+
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <h3>Brookies</h3>
+
+      <div class="social">
+        <a href="#"><span class="dot">♪</span> Brookies_hn</a>
+        <a href="#"><span class="dot">⌁</span> Brookies_hn</a>
+        <a href="#"><span class="dot">✆</span> +504 9833-2851</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const totalText = document.getElementById("totalText");
+    const items = Array.from(document.querySelectorAll(".item"));
+
+    function calcTotal() {
+      let total = 0;
+      items.forEach(item => {
+        const price = Number(item.dataset.price || 0);
+        const qty = Number(item.querySelector(".qty").value || 0);
+        total += price * qty;
+      });
+      totalText.textContent = `L.${total}`;
+    }
+
+    document.querySelectorAll(".qty").forEach(sel => {
+      sel.addEventListener("change", calcTotal);
+    });
+
+    calcTotal();
+  </script>
+
+</body>
+
+</html>
