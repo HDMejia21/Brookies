@@ -1,14 +1,16 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Brookies | Tienda</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brookies | Promoción</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/tienda.css">
+  <link rel="stylesheet" href="css/promo.css">
 </head>
 
 <body>
@@ -18,18 +20,18 @@
     <div class="nav__inner">
       <div class="brand">
         <a href="index.html">
-          <img src="img/logo blanco.png" style="width:200px" alt="brookies">
+          <img src="img/logo blanco.png" style="width: 200px;" alt="brookies">
         </a>
       </div>
 
-      <nav class="menu">
+      <nav class="menu" aria-label="Menú principal">
         <a href="tienda.html">Menú</a>
         <a href="promo.html">Promoción</a>
         <a href="login.html">Log in</a>
         <a href="sobre-nosotros.html">Sobre Nosotros</a>
       </nav>
 
-      <a class="cart" href="carrito.html" title="Carrito">
+      <a class="cart" href="carrito.html" title="Carrito" aria-label="Ir al carrito">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M6 6h15l-1.5 9h-12z"></path>
           <path d="M6 6l-2-3H1"></path>
@@ -49,54 +51,40 @@
     </div>
   </section>
 
-  <!-- TITLE -->
-  <div class="welcome">
-    Bienvenido a nuestra <br><strong>TIENDA!!</strong>
-  </div>
-
-  <!-- STORE -->
-  <section class="store">
-    <div class="store__inner">
-
-      <!-- PRODUCTS -->
-      <div class="products">
-
-        <div class="product">
-          <img src="img/foto choco chip.jpg" alt="Galleta Chocochip">
-          <div class="product-info">
-            <h4>Galleta Chocochip</h4>
-            <a href="carrito.html" class="btn">Añadir</a>
-
-          </div>
+  <!-- BLOQUE 1 -->
+  <section class="section">
+    <div class="wrap">
+      <div class="row">
+        <div class="textCard">
+          <h2>Promo!!!</h2>
+          <p>Aprovecha nuestra nueva promoción del mes y disfruta de nuestras deliciosas galletas!</p>
         </div>
 
-        <div class="product">
-          <img src="img/fotos de red velvet.jpg" alt="Galleta Redvelvet">
-          <div class="product-info">
-            <h4>Galleta Redvelvet</h4>
-            <a href="carrito.html" class="btn">Añadir</a>
-
-          </div>
+        <div class="mediaCard">
+          <img src="img/1.jpg" alt="Poster promo">
         </div>
-
-        <div class="product">
-          <img src="img/3.jpg" alt="Galleta rellena de avellana">
-          <div class="product-info">
-            <h4>Galleta rellena de crema de avellana</h4>
-            <a href="carrito.html" class="btn">Añadir</a>
-
-          </div>
-        </div>
-        
-
       </div>
+    </div>
+  </section>
 
-      <!-- PROMO -->
-      <aside class="promo">
-        <img src="img/1.jpg" alt="Promo Brookies">
-        <img src="img/Foto 4.jpg" alt="Promo 2">
-      </aside>
+  <!-- BLOQUE 2 -->
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="row">
+        <div class="videoCard">
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
+            title="Video Brookies"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
 
+        <div class="textCard">
+          <h2>Nuevo Sabor</h2>
+          <p>Descubre nuestros nuevos sabores y aprovecha antes de que se acaben</p>
+        </div>
+      </div>
     </div>
   </section>
 
